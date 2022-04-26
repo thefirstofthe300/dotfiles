@@ -38,3 +38,6 @@ source ${ZSH}/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ${HOME}/.p10k.zsh ]] || source ${HOME}/.p10k.zsh
 
+{{- if eq .chezmoi.hostname "Dannys-MBP" }}
+source "$HOME/.env-improvement/shellhook.sh" # [[EI SHELL SETUP]]
+{{ end }}

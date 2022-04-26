@@ -1,3 +1,7 @@
 [user]
 	name = Danny Seymour
+    {{- if eq .chezmoi.hostname "Dannys-MBP" }}
+    email = "danny.seymour@gremlin.com"
+    {{- else }}
 	email = {{ .email }}
+    {{- end }}
