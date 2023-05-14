@@ -4,6 +4,8 @@ case $- in
     *) return;;
 esac
 
+export PATH="${PATH}:${HOME}/.local/bin"
+
 # Path to your oh-my-bash installation.
 export OSH='/var/home/dseymour/.oh-my-bash'
 
