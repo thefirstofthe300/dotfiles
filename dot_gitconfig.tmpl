@@ -1,14 +1,8 @@
 [user]
 	name = Danny Seymour
-    {{- if eq .chezmoi.hostname "Dannys-MBP" }}
-    email = "danny.seymour@gremlin.com"
-    {{- else }}
 	email = {{ .email }}
-    {{- end }}
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBLs1zuIf732rfBMxwN6ly3bWM+xNqPiw5ahLpTvVj7k
 [gpg]
     format = ssh
-[gpg "ssh"]
-    program = /opt/1Password/op-ssh-sign
 [commit]
     gpgsign = true
