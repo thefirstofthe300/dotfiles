@@ -54,4 +54,13 @@
     url = "https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v{{ $awsIamAuthVersion }}/aws-iam-authenticator_{{ $awsIamAuthVersion }}_linux_amd64"
     executable = true
     refreshPeriod = "168h"
+{{ $clusterctlVersion := "1.4.2" }}
+[".local/bin/clusterctl"]
+    type = "file"
+    url = "https://github.com/kubernetes-sigs/cluster-api/releases/download/v{{ $clusterctlVersion }}/clusterctl-linux-amd64"
+    executable = true
+    refreshPeriod = "168h"
+
+
+
 

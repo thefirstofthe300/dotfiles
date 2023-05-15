@@ -79,7 +79,7 @@ completions=(
   composer
   ssh
   kubectl
-  aws-cli
+  awscli
   docker
   helm
   terraform
