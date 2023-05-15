@@ -27,3 +27,9 @@
     url = "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS NF Bold Italic.ttf"
     refreshPeriod = "168h"
 {{- end }}
+[".oh-my-bash"]
+    type = "archive"
+    url = "https://github.com/ohmybash/oh-my-bash/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
