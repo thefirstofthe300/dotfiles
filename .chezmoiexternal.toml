@@ -33,6 +33,7 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+{{- if (not (eq (env "REMOTE_CONTAINERS") "true")) }}
 {{ $kubectlVersion := "1.25.7" }}
 [".local/bin/kubectl"]
     type = "file"
@@ -60,7 +61,4 @@
     url = "https://github.com/kubernetes-sigs/cluster-api/releases/download/v{{ $clusterctlVersion }}/clusterctl-linux-amd64"
     executable = true
     refreshPeriod = "168h"
-
-
-
-
+{{- end }}
