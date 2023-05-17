@@ -61,4 +61,21 @@
     url = "https://github.com/kubernetes-sigs/cluster-api/releases/download/v{{ $clusterctlVersion }}/clusterctl-linux-amd64"
     executable = true
     refreshPeriod = "168h"
+{{ $kubectxVersion := "0.9.4" }}
+[".local/bin/kubectx"]
+    type = "file"
+    url = "https://github.com/ahmetb/kubectx/releases/download/v{{ $kubectxVersion }}/kubectx_v{{ $kubectxVersion }}_linux_x86_64.tar.gz"
+    executable = true
+    refreshPeriod = "168h"
+    [".local/bin/kubectx".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "kubectx"]
+[".local/bin/kubens"]
+    type = "file"
+    url = "https://github.com/ahmetb/kubectx/releases/download/v{{ $kubectxVersion }}/kubens_v{{ $kubectxVersion }}_linux_x86_64.tar.gz"
+    executable = true
+    refreshPeriod = "168h"
+    [".local/bin/kubens".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "kubens"]
 {{- end }}
