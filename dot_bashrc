@@ -125,6 +125,8 @@ else
   export EDITOR='vim'
 fi
 
+POWERLINE_PROMPT="user_info scm python_venv ruby mycwd"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
