@@ -40,6 +40,15 @@
     url = "https://dl.k8s.io/release/v{{ $kubectlVersion }}/bin/linux/amd64/kubectl"
     executable = true
     refreshPeriod = "168h"
+{{ $helmVersion := "3.12.0" }}
+[".local/bin/helm"]
+    type = "file"
+    url = "https://get.helm.sh/helm-v{{ $helmVersion }}-{{ .chezmoi.os }}-{{ .chezmoi.arch }}.tar.gz"
+    executable = true
+    refreshPeriod = "168h"
+    [".local/bin/helm".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "{{ .chezmoi.os}}-{{ .chezmoi.arch }}/helm"]
 {{ $istioVersion := "1.17.2" -}}
 [".local/bin/istioctl"]
     type = "file"
