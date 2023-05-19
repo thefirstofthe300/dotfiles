@@ -87,4 +87,14 @@
     [".local/bin/kubens".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "kubens"]
+{{ $fluxVersion := "0.41.2" }}
+[".local/bin/flux"]
+    type = "file"
+    url = "https://github.com/fluxcd/flux2/releases/download/v{{ $fluxVersion }}/flux_{{ $fluxVersion }}_{{ .chezmoi.os }}_{{ .chezmoi.arch }}.tar.gz"
+    executable = true
+    refreshPeriod = "168h"
+    [".local/bin/flux".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "flux"]
+
 {{- end }}
