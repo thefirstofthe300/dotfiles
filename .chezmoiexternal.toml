@@ -51,6 +51,11 @@
     exact = true
     stripComponents = 1
 {{- if (not (eq (env "REMOTE_CONTAINERS") "true")) }}
+[".local/tfenv"]
+    type = "archive"
+    url = "https://github.com/tfutils/tfenv/archive/refs/tags/v3.0.0.tar.gz"
+    exact = true
+    stripComponents = 1
 {{ $kubectlVersion := "1.25.7" }}
 [".local/bin/kubectl"]
     type = "file"
