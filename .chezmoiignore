@@ -6,4 +6,8 @@
 .config/containers/containers.conf
 {{ end }}
 
+{{ if env "REMOTE_CONTAINERS" }}
+.gitconfig
+{{ end}}
+
 install.sh
