@@ -115,3 +115,9 @@ source $ZSH/oh-my-zsh.sh
 
 export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 
+if [[ $(command -v vim) != "" ]]; then
+    export EDITOR=vim
+else
+    export EDITOR=vi
+fi
+
