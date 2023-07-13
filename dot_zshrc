@@ -121,3 +121,6 @@ else
     export EDITOR=vi
 fi
 
+if [[ $(command -v op) != "" ]]; then
+    source ${HOME}/.config/op/plugins.sh
+fi
