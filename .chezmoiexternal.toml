@@ -118,4 +118,10 @@
     [".local/bin/flux".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "flux"]
+{{ $minikubeVersion := "v1.31.2" }}
+[".local/bin/minikube"]
+    type = "file"
+    url = "https://storage.googleapis.com/minikube/releases/v{{ $minikubeVersion }}/minikube-linux-amd64"
+    executable = true
+    refreshPeriod = "168h"
 {{- end }}
