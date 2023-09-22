@@ -125,3 +125,8 @@
     executable = true
     refreshPeriod = "168h"
 {{- end }}
+{{ $talosctlVersion := "1.4.8" }}
+[".local/bin/talosctl"]
+    type = "file"
+    url = "https://github.com/siderolabs/talos/releases/download/v{{ $talosctlVersion }}/talosctl-linux-amd64"
+    executable = true
