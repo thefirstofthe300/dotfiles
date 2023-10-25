@@ -71,7 +71,7 @@
     [".local/bin/helm".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "{{ .chezmoi.os}}-{{ .chezmoi.arch }}/helm"]
-{{ $istioVersion := "1.17.2" -}}
+{{ $istioVersion := "1.18.0" -}}
 [".local/bin/istioctl"]
     type = "file"
     url = "https://github.com/istio/istio/releases/download/{{ $istioVersion }}/istioctl-{{ $istioVersion }}-{{ .chezmoi.os }}-{{ .chezmoi.arch }}.tar.gz"
@@ -130,3 +130,13 @@
     type = "file"
     url = "https://github.com/siderolabs/talos/releases/download/v{{ $talosctlVersion }}/talosctl-linux-amd64"
     executable = true
+{{ $tfSwitchVersion := "0.13.1308" }}
+[".local/bin/tfswitch"]
+    type = "file"
+    url = "https://github.com/warrensbox/terraform-switcher/releases/download/{{ $tfSwitchVersion }}/terraform-switcher_{{ $tfSwitchVersion }}_{{ .chezmoi.os }}_{{ .chezmoi.arch }}.tar.gz"
+    executable = true
+    refreshPeriod = "168h"
+    [".local/bin/tfswitch".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "tfswitch"]
+{{- end }}
