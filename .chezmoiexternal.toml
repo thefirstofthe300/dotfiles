@@ -124,12 +124,6 @@
     url = "https://storage.googleapis.com/minikube/releases/v{{ $minikubeVersion }}/minikube-linux-amd64"
     executable = true
     refreshPeriod = "168h"
-{{- end }}
-{{ $talosctlVersion := "1.4.8" }}
-[".local/bin/talosctl"]
-    type = "file"
-    url = "https://github.com/siderolabs/talos/releases/download/v{{ $talosctlVersion }}/talosctl-linux-amd64"
-    executable = true
 {{ $tfSwitchVersion := "0.13.1308" }}
 [".local/bin/tfswitch"]
     type = "file"
@@ -139,4 +133,18 @@
     [".local/bin/tfswitch".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "tfswitch"]
+{{ $terraformDocsVersion := "v0.16.0" }}
+[".local/bin/terraform-docs"]
+    type = "file"
+    url = "https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-{{ $terraformDocsVersion }}-{{ .chezmoi.os }}-{{ .chezmoi.arch }}.tar.gz"
+    executable = true
+    refreshPeriod = "168h"
+    [".local/bin/terraform-docs".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "terraform-docs"]
 {{- end }}
+{{ $talosctlVersion := "1.4.8" }}
+[".local/bin/talosctl"]
+    type = "file"
+    url = "https://github.com/siderolabs/talos/releases/download/v{{ $talosctlVersion }}/talosctl-linux-amd64"
+    executable = true
