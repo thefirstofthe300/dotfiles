@@ -109,7 +109,7 @@
     [".local/bin/kubens".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "kubens"]
-{{ $fluxVersion := "2.0.0" }}
+{{ $fluxVersion := "2.1.2" }}
 [".local/bin/flux"]
     type = "file"
     url = "https://github.com/fluxcd/flux2/releases/download/v{{ $fluxVersion }}/flux_{{ $fluxVersion }}_{{ .chezmoi.os }}_{{ .chezmoi.arch }}.tar.gz"
@@ -142,6 +142,17 @@
     [".local/bin/terraform-docs".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "terraform-docs"]
+{{ $tflintVersion := "v0.48.0" }}
+[".local/bin/tflint"]
+    type = "archive-file"
+    url = "https://github.com/terraform-linters/tflint/releases/download/{{ $tflintVersion }}/tflint_{{ .chezmoi.os }}_{{ .chezmoi.arch }}.zip"
+    executable = true
+    path = "tflint"
+{{ $tfsecVersion := "v1.28.4" }}
+[".local/bin/tfsec"]
+    type = "file"
+    url = "https://github.com/aquasecurity/tfsec/releases/download/{{ $tfsecVersion }}/tfsec-checkgen-{{ .chezmoi.os }}-{{ .chezmoi.arch }}"
+    executable = true
 {{- end }}
 {{ $talosctlVersion := "1.4.8" }}
 [".local/bin/talosctl"]
