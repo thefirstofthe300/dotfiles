@@ -159,3 +159,8 @@
     type = "file"
     url = "https://github.com/siderolabs/talos/releases/download/v{{ $talosctlVersion }}/talosctl-linux-amd64"
     executable = true
+{{ $skaffoldVersion := "2.9.0" }}
+[".local/bin/skaffold"]
+    type = "file"
+    url = "https://storage.googleapis.com/skaffold/releases/v{{ $skaffoldVersion }}/skaffold-linux-amd64"
+    executable = true
