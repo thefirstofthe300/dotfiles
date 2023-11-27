@@ -154,7 +154,7 @@
     url = "https://github.com/aquasecurity/tfsec/releases/download/{{ $tfsecVersion }}/tfsec-checkgen-{{ .chezmoi.os }}-{{ .chezmoi.arch }}"
     executable = true
 {{- end }}
-{{ $talosctlVersion := "1.4.8" }}
+{{ $talosctlVersion := "1.5.5" }}
 [".local/bin/talosctl"]
     type = "file"
     url = "https://github.com/siderolabs/talos/releases/download/v{{ $talosctlVersion }}/talosctl-linux-amd64"
