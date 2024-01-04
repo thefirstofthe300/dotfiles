@@ -109,7 +109,7 @@
     [".local/bin/kubens".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "kubens"]
-{{ $fluxVersion := "2.1.2" }}
+{{ $fluxVersion := "2.2.2" }}
 [".local/bin/flux"]
     type = "file"
     url = "https://github.com/fluxcd/flux2/releases/download/v{{ $fluxVersion }}/flux_{{ $fluxVersion }}_{{ .chezmoi.os }}_{{ .chezmoi.arch }}.tar.gz"
@@ -118,7 +118,7 @@
     [".local/bin/flux".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "flux"]
-{{ $minikubeVersion := "1.31.2" }}
+{{ $minikubeVersion := "1.32.0" }}
 [".local/bin/minikube"]
     type = "file"
     url = "https://storage.googleapis.com/minikube/releases/v{{ $minikubeVersion }}/minikube-linux-amd64"
