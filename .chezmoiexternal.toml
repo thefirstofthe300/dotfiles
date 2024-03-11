@@ -56,7 +56,7 @@
     url = "https://github.com/tfutils/tfenv/archive/refs/tags/v3.0.0.tar.gz"
     exact = true
     stripComponents = 1
-{{ $kubectlVersion := "1.25.7" }}
+{{ $kubectlVersion := "1.28.3" }}
 [".local/bin/kubectl"]
     type = "file"
     url = "https://dl.k8s.io/release/v{{ $kubectlVersion }}/bin/linux/amd64/kubectl"
