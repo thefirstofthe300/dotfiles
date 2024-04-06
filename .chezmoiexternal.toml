@@ -109,7 +109,11 @@
     [".local/bin/kubens".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "kubens"]
+<<<<<<< HEAD
 {{ $fluxVersion := "2.2.2" }}
+=======
+{{ $fluxVersion := "2.2.1" }}
+>>>>>>> 2c4ea08 (chore: upgrade talosctl to 1.6.7)
 [".local/bin/flux"]
     type = "file"
     url = "https://github.com/fluxcd/flux2/releases/download/v{{ $fluxVersion }}/flux_{{ $fluxVersion }}_{{ .chezmoi.os }}_{{ .chezmoi.arch }}.tar.gz"
@@ -154,7 +158,7 @@
     url = "https://github.com/aquasecurity/tfsec/releases/download/{{ $tfsecVersion }}/tfsec-checkgen-{{ .chezmoi.os }}-{{ .chezmoi.arch }}"
     executable = true
 {{- end }}
-{{ $talosctlVersion := "1.5.5" }}
+{{ $talosctlVersion := "1.6.7" }}
 [".local/bin/talosctl"]
     type = "file"
     url = "https://github.com/siderolabs/talos/releases/download/v{{ $talosctlVersion }}/talosctl-linux-amd64"
@@ -169,3 +173,11 @@
     type = "file"
     url = "https://github.com/kubernetes-sigs/cluster-api-provider-aws/releases/download/v{{ $clusterawsadmVersion }}/clusterawsadm-linux-amd64"
     executable = true
+{{ $kubesealVersion := "0.24.5" }}
+[".local/bin/kubeseal"]
+    type = "file"
+    url = "https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{ $kubesealVersion }}/kubeseal-{{ $kubesealVersion }}-linux-amd64.tar.gz"
+    executable = true
+    [".local/bin/kubeseal".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "kubeseal"]
